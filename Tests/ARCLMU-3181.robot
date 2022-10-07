@@ -1,7 +1,7 @@
 *** Settings ***
 #Library    SeleniumLibrary      timeout= 30
 Library    ScreenCapLibrary
-Library    ..//libraries//travelfree.py
+Library    ../libraries/travelfree.py
 Resource    ..//resources//keywords.robot
 Resource    ..//resources//keywords_go.robot
 Resource    ..//resources//keywords_valida.robot
