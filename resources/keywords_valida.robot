@@ -7,7 +7,7 @@ Library    AppiumLibrary
 Library    OperatingSystem
 Library    RequestsLibrary
 Library    DateTime
-Library    ..//libraries//travelfree.py
+Library    ..//Libraries//travelfree.py
 Resource    ..//resources//keywords.robot
 Resource    ..//resources//recursos.robot
 Resource    ..//resources//config.robot
