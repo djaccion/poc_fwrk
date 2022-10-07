@@ -1,0 +1,23 @@
+{
+    "fields": {
+        "summary": "ACME: AREA CLIENTE MULTIPLATAFORMA ECARE",
+        "description": "",
+        "customfield_14817": "2021-02-07T18:11:43.537+0100",
+        "customfield_14818": "2020-11-03T13:11:53.564+0100",
+        "customfield_19300": {
+            "self": "https://jira.si.orange.es/rest/api/2/customFieldOption/15800",
+            "value": "Automático",
+            "id": "15800"
+        },
+        "customfield_14827": ["ARCLMU-3181"],
+        "customfield_12730": [
+            {
+                "key": "MSIS-9206"
+            }
+        ],
+        "labels": ["ACME-TEST-AUTOMATIC"],
+        "project": {
+            "key": "ARCLMU"
+        }
+    }
+}

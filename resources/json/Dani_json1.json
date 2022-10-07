@@ -1,0 +1,19 @@
+{
+    "fields": {
+        "summary": "Alani API Smoke",
+        "description": "",
+        "customfield_14817": "2020-11-03T13:11:52.535+0100",
+        "customfield_14818": "2020-11-03T13:11:53.564+0100",
+        "customfield_19300": {
+            "self": "https://jira.si.orange.es/rest/api/2/customFieldOption/15800",
+            "value": "Automático",
+            "id": "15800"
+        },
+        "customfield_14827": [
+            "SQAPA-3424"
+        ],
+        "project": {
+            "key": "SQAPA" 
+        }
+    }
+}

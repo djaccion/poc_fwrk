@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.6 on darwin)" generated="20220926 10:52:04.163" rpa="false" schemaversion="2">
+<suite id="s1" name="ARCLMU-3181" source="/Users/israel.garate/Desktop/Tsoft/Descargas Tsoft/acmeapporangeosp-master/tests/ARCLMU-3181.robot">
+<test id="s1-t1" name="PRECONDICION">
+<kw name="Fecha y hora de inicio de la Suite" library="keywords">
+<kw name="Get Current Date" library="DateTime">
+<var>${fecha_inicial}</var>
+<arg>result_format=timestamp</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220926 10:52:04.967" level="INFO">${fecha_inicial} = 2022-09-26 10:52:04.967</msg>
+<status status="PASS" starttime="20220926 10:52:04.967" endtime="20220926 10:52:04.967"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${fecha_inicial}</var>
+<arg>result_format=%Y-%m-%dT%H:%M:%S.%f</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220926 10:52:04.967" level="INFO">${fecha_inicial} = 2022-09-26T10:52:04.967084</msg>
+<status status="PASS" starttime="20220926 10:52:04.967" endtime="20220926 10:52:04.967"/>
+</kw>
+<kw name="Get Substring" library="String">
+<var>${fecha_inicial}</var>
+<arg>${fecha_inicial}</arg>
+<arg>0</arg>
+<arg>23</arg>
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<msg timestamp="20220926 10:52:04.967" level="INFO">${fecha_inicial} = 2022-09-26T10:52:04.967</msg>
+<status status="PASS" starttime="20220926 10:52:04.967" endtime="20220926 10:52:04.968"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${lista_testplan}</var>
+<arg>${test_plan}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220926 10:52:04.968" level="INFO">${lista_testplan} = ['ARCLMU-3181']</msg>
+<status status="PASS" starttime="20220926 10:52:04.968" endtime="20220926 10:52:04.968"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${json_xray_suite}</var>
+<arg>./resources/json/xray_suite_plantilla.json</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20220926 10:52:04.968" level="INFO" html="true">Getting file '&lt;a href="file:///Users/israel.garate/Desktop/Tsoft/Descargas Tsoft/acmeapporangeosp-master/resources/json/xray_suite_plantilla.json"&gt;/Users/israel.garate/Desktop/Tsoft/Descargas Tsoft/acmeapporangeosp-master/resources/json/xray_suite_plantilla.json&lt;/a&gt;'.</msg>
+<msg timestamp="20220926 10:52:04.968" level="INFO">${json_xray_suite} = {
+    "fields": {
+        "summary": "ACME: AREA CLIENTE MULTIPLATAFORMA ECARE",
+        "description": "",
+        "customfield_14817": "2021-02-07T18:11:43.537+0100",
+        "customfield_14818": "2...</msg>
+<status status="PASS" starttime="20220926 10:52:04.968" endtime="20220926 10:52:04.969"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${object}</var>
+<arg>json.loads('''${json_xray_suite}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220926 10:52:04.969" level="INFO">${object} = {'fields': {'summary': 'ACME: AREA CLIENTE MULTIPLATAFORMA ECARE', 'description': '', 'customfield_14817': '2021-02-07T18:11:43.537+0100', 'customfield_14818': '2020-11-03T13:11:53.564+0100', 'customf...</msg>
+<status status="PASS" starttime="20220926 10:52:04.969" endtime="20220926 10:52:04.969"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${object["fields"]}</arg>
+<arg>customfield_14817=${fecha_inicial}+0100</arg>
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20220926 10:52:04.969" endtime="20220926 10:52:04.971"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${object["fields"]}</arg>
+<arg>customfield_14827=${lista_testplan}</arg>
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20220926 10:52:04.971" endtime="20220926 10:52:04.973"/>
+</kw>
+<kw name="Dumps" library="json">
+<var>${xray_suite}</var>
+<arg>${object}</arg>
+<arg>ensure_ascii=False</arg>
+<doc>Serialize ``obj`` to a JSON formatted ``str``.</doc>
+<msg timestamp="20220926 10:52:04.973" level="INFO">${xray_suite} = {"fields": {"summary": "ACME: AREA CLIENTE MULTIPLATAFORMA ECARE", "description": "", "customfield_14817": "2022-09-26T10:52:04.967+0100", "customfield_14818": "2020-11-03T13:11:53.564+0100", "customf...</msg>
+<status status="PASS" starttime="20220926 10:52:04.973" endtime="20220926 10:52:04.973"/>
+</kw>
+<kw name="Create File" library="OperatingSystem">
+<arg>./output/xray/xray_suite.json</arg>
+<arg>${xray_suite}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20220926 10:52:04.974" level="INFO" html="true">Created file '&lt;a href="file:///Users/israel.garate/Desktop/Tsoft/Descargas Tsoft/acmeapporangeosp-master/output/xray/xray_suite.json"&gt;/Users/israel.garate/Desktop/Tsoft/Descargas Tsoft/acmeapporangeosp-master/output/xray/xray_suite.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220926 10:52:04.973" endtime="20220926 10:52:04.974"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:04.974" endtime="20220926 10:52:04.974"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*****************************************************************************************************************************************</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:04.975" endtime="20220926 10:52:04.975"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*****************************************************************************************************************************************</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:04.975" endtime="20220926 10:52:04.975"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*****************************************************************************************************************************************</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:04.975" endtime="20220926 10:52:04.975"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*****************************************************************************************************************************************</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:04.975" endtime="20220926 10:52:04.975"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>TEST PLAN QUE SE INICIA:</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:04.975" endtime="20220926 10:52:04.975"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${test_plan}-[ACME-TEST PLAN-AUTOMATIC]-Batería de Pruebas de regresión automáticas ${perfil}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:04.976" endtime="20220926 10:52:04.976"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:04.976" endtime="20220926 10:52:04.976"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Lo vamos a ejecutar contra el entorno ${entorno} y sobre un navegador ${navega}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:04.976" endtime="20220926 10:52:04.976"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*****************************************************************************************************************************************</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:04.976" endtime="20220926 10:52:04.976"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*****************************************************************************************************************************************</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:04.976" endtime="20220926 10:52:04.977"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*****************************************************************************************************************************************</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:04.977" endtime="20220926 10:52:04.977"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*****************************************************************************************************************************************</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:04.977" endtime="20220926 10:52:04.977"/>
+</kw>
+<status status="PASS" starttime="20220926 10:52:04.966" endtime="20220926 10:52:04.977"/>
+</kw>
+<kw name="Preparo fecha y hora de los tests" library="keywords">
+<kw name="Get File" library="OperatingSystem">
+<var>${json_xray_test}</var>
+<arg>./resources/json/xray_test_plantilla.json</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20220926 10:52:04.977" level="INFO" html="true">Getting file '&lt;a href="file:///Users/israel.garate/Desktop/Tsoft/Descargas Tsoft/acmeapporangeosp-master/resources/json/xray_test_plantilla.json"&gt;/Users/israel.garate/Desktop/Tsoft/Descargas Tsoft/acmeapporangeosp-master/resources/json/xray_test_plantilla.json&lt;/a&gt;'.</msg>
+<msg timestamp="20220926 10:52:04.978" level="INFO">${json_xray_test} = {
+    "tests": []
+}</msg>
+<status status="PASS" starttime="20220926 10:52:04.977" endtime="20220926 10:52:04.978"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${object}</var>
+<arg>json.loads('''${json_xray_test}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220926 10:52:04.978" level="INFO">${object} = {'tests': []}</msg>
+<status status="PASS" starttime="20220926 10:52:04.978" endtime="20220926 10:52:04.978"/>
+</kw>
+<kw name="Dumps" library="json">
+<var>${json_xray_test}</var>
+<arg>${object}</arg>
+<arg>ensure_ascii=False</arg>
+<doc>Serialize ``obj`` to a JSON formatted ``str``.</doc>
+<msg timestamp="20220926 10:52:04.979" level="INFO">${json_xray_test} = {"tests": []}</msg>
+<status status="PASS" starttime="20220926 10:52:04.979" endtime="20220926 10:52:04.979"/>
+</kw>
+<kw name="Create File" library="OperatingSystem">
+<arg>./output/xray/xray_test.json</arg>
+<arg>${json_xray_test}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20220926 10:52:04.979" level="INFO" html="true">Created file '&lt;a href="file:///Users/israel.garate/Desktop/Tsoft/Descargas Tsoft/acmeapporangeosp-master/output/xray/xray_test.json"&gt;/Users/israel.garate/Desktop/Tsoft/Descargas Tsoft/acmeapporangeosp-master/output/xray/xray_test.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220926 10:52:04.979" endtime="20220926 10:52:04.979"/>
+</kw>
+<status status="PASS" starttime="20220926 10:52:04.977" endtime="20220926 10:52:04.979"/>
+</kw>
+<kw name="Pasa los certificados" library="keywords">
+<kw name="Warning" library="travelfree">
+<status status="PASS" starttime="20220926 10:52:04.980" endtime="20220926 10:52:04.980"/>
+</kw>
+<kw name="Verify" library="travelfree">
+<arg>${grid}</arg>
+<msg timestamp="20220926 10:52:05.383" level="FAIL">ConnectionError: HTTPSConnectionPool(host='gcsw-testfed-grid-devtc.shared.cloud.si.orange.es', port=443): Max retries exceeded with url: /wd/hub (Caused by NewConnectionError('&lt;urllib3.connection.VerifiedHTTPSConnection object at 0x134d092d0&gt;: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))</msg>
+<status status="FAIL" starttime="20220926 10:52:04.980" endtime="20220926 10:52:05.383"/>
+</kw>
+<status status="FAIL" starttime="20220926 10:52:04.980" endtime="20220926 10:52:05.385"/>
+</kw>
+<kw name="Abro app" library="keywords">
+<status status="NOT RUN" starttime="20220926 10:52:05.386" endtime="20220926 10:52:05.387"/>
+</kw>
+<kw name="Teardown PRECONDICION" library="teardown_ARCLMU_3181" type="TEARDOWN">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Esta es la PRECONDICIÓN</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:05.388" endtime="20220926 10:52:05.389"/>
+</kw>
+<status status="PASS" starttime="20220926 10:52:05.388" endtime="20220926 10:52:05.389"/>
+</kw>
+<status status="FAIL" starttime="20220926 10:52:04.966" endtime="20220926 10:52:05.390">ConnectionError: HTTPSConnectionPool(host='gcsw-testfed-grid-devtc.shared.cloud.si.orange.es', port=443): Max retries exceeded with url: /wd/hub (Caused by NewConnectionError('&lt;urllib3.connection.VerifiedHTTPSConnection object at 0x134d092d0&gt;: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))</status>
+</test>
+<test id="s1-t2" name="ARCLMU-9999">
+<kw name="Fecha y hora del inicio del test" library="keywords">
+<kw name="Get Current Date" library="DateTime">
+<var>${inicial_test}</var>
+<arg>result_format=timestamp</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220926 10:52:05.417" level="INFO">${inicial_test} = 2022-09-26 10:52:05.417</msg>
+<status status="PASS" starttime="20220926 10:52:05.417" endtime="20220926 10:52:05.417"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${inicial_test}</var>
+<arg>result_format=%Y-%m-%dT%H:%M:%S.%f</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220926 10:52:05.418" level="INFO">${inicial_test} = 2022-09-26T10:52:05.417849</msg>
+<status status="PASS" starttime="20220926 10:52:05.418" endtime="20220926 10:52:05.418"/>
+</kw>
+<kw name="Get Substring" library="String">
+<var>${inicial_test}</var>
+<arg>${inicial_test}</arg>
+<arg>0</arg>
+<arg>23</arg>
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<msg timestamp="20220926 10:52:05.419" level="INFO">${inicial_test} = 2022-09-26T10:52:05.417</msg>
+<status status="PASS" starttime="20220926 10:52:05.418" endtime="20220926 10:52:05.419"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${inicial_test}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220926 10:52:05.419" level="INFO">${inicial_test} = 2022-09-26T10:52:05.417</msg>
+<status status="PASS" starttime="20220926 10:52:05.419" endtime="20220926 10:52:05.419"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:05.420" endtime="20220926 10:52:05.420"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>********************************************************************************************************</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:05.420" endtime="20220926 10:52:05.420"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>********************************************************************************************************</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:05.420" endtime="20220926 10:52:05.420"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>********************************************************************************************************</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:05.421" endtime="20220926 10:52:05.421"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>TEST EN EJECUCIÓN:</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:05.421" endtime="20220926 10:52:05.421"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${TEST_NAME}-${TEST_TAGS}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:05.421" endtime="20220926 10:52:05.421"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:05.421" endtime="20220926 10:52:05.422"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Se trata de un perfil ${perfil} contra el entorno ${entorno} y sobre un dispositivo real</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:05.422" endtime="20220926 10:52:05.422"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:05.422" endtime="20220926 10:52:05.422"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>********************************************************************************************************</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:05.422" endtime="20220926 10:52:05.423"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>********************************************************************************************************</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:05.423" endtime="20220926 10:52:05.423"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>********************************************************************************************************</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220926 10:52:05.423" endtime="20220926 10:52:05.423"/>
+</kw>
+<status status="PASS" starttime="20220926 10:52:05.417" endtime="20220926 10:52:05.423"/>
+</kw>
+<kw name="Acceder al dashboard principal" library="keywords">
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220926 10:52:09.426" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20220926 10:52:05.424" endtime="20220926 10:52:09.426"/>
+</kw>
+<kw name="Go To Url" library="AppiumLibrary">
+<arg>url=${env}${pag_dashboard}</arg>
+<doc>Opens URL in default web browser.</doc>
+<msg timestamp="20220926 10:52:09.439" level="FAIL">Variable '${env}' not found.</msg>
+<status status="FAIL" starttime="20220926 10:52:09.429" endtime="20220926 10:52:09.439"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220926 10:52:09.441" endtime="20220926 10:52:09.441"/>
+</kw>
+<kw name="Click Element">
+<arg>${TV}</arg>
+<status status="NOT RUN" starttime="20220926 10:52:09.441" endtime="20220926 10:52:09.442"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220926 10:52:09.442" endtime="20220926 10:52:09.442"/>
+</kw>
+<kw name="Cierro NBA si existe" library="keywords">
+<status status="NOT RUN" starttime="20220926 10:52:09.442" endtime="20220926 10:52:09.442"/>
+</kw>
+<kw name="Click Element">
+<arg>${selector_movil}</arg>
+<status status="NOT RUN" starttime="20220926 10:52:09.443" endtime="20220926 10:52:09.443"/>
+</kw>
+<kw name="Cierro NBA si existe" library="keywords">
+<status status="NOT RUN" starttime="20220926 10:52:09.443" endtime="20220926 10:52:09.443"/>
+</kw>
+<kw name="Graba video desde aquí" library="keywords">
+<status status="NOT RUN" starttime="20220926 10:52:09.443" endtime="20220926 10:52:09.444"/>
+</kw>
+<status status="FAIL" starttime="20220926 10:52:05.424" endtime="20220926 10:52:09.444"/>
+</kw>
+<kw name="Deslogarte" library="keywords">
+<status status="NOT RUN" starttime="20220926 10:52:09.445" endtime="20220926 10:52:09.445"/>
+</kw>
+<kw name="Probar login KO contraseña" library="keywords">
+<status status="NOT RUN" starttime="20220926 10:52:09.445" endtime="20220926 10:52:09.445"/>
+</kw>
+<kw name="Probar login KO pasaporte" library="keywords">
+<status status="NOT RUN" starttime="20220926 10:52:09.446" endtime="20220926 10:52:09.446"/>
+</kw>
+<kw name="Logado OK" library="keywords">
+<status status="NOT RUN" starttime="20220926 10:52:09.446" endtime="20220926 10:52:09.446"/>
+</kw>
+<kw name="Teardown ARCLMU-9999" library="teardown_ARCLMU_3181" type="TEARDOWN">
+<kw name="Fecha y hora de fin del test" library="keywords">
+<kw name="Get Current Date" library="DateTime">
+<var>${final_test}</var>
+<arg>local</arg>
+<arg>exclude_millis=yes</arg>
+<arg>result_format=%Y-%m-%dT%H:%M:%S+01:00</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220926 10:52:09.448" level="INFO">${final_test} = 2022-09-26T10:52:09+01:00</msg>
+<status status="PASS" starttime="20220926 10:52:09.448" endtime="20220926 10:52:09.448"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${final_test}</var>
+<arg>result_format=timestamp</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220926 10:52:09.449" level="INFO">${final_test} = 2022-09-26 10:52:09.449</msg>
+<status status="PASS" starttime="20220926 10:52:09.449" endtime="20220926 10:52:09.449"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${final_test}</var>
+<arg>result_format=%Y-%m-%dT%H:%M:%S.%f</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220926 10:52:09.450" level="INFO">${final_test} = 2022-09-26T10:52:09.449704</msg>
+<status status="PASS" starttime="20220926 10:52:09.450" endtime="20220926 10:52:09.450"/>
+</kw>
+<kw name="Get Substring" library="String">
+<var>${final_test}</var>
+<arg>${final_test}</arg>
+<arg>0</arg>
+<arg>23</arg>
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<msg timestamp="20220926 10:52:09.451" level="INFO">${final_test} = 2022-09-26T10:52:09.449</msg>
+<status status="PASS" starttime="20220926 10:52:09.450" endtime="20220926 10:52:09.451"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${datos_test}</var>
+<arg>testKey=${TEST_NAME}</arg>
+<arg>start=${inicial_test}+0100</arg>
+<arg>finish=${final_test}+0100</arg>
+<arg>comment=${comentario}</arg>
+<arg>status=${TEST STATUS}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220926 10:52:09.452" level="INFO">${datos_test} = {'testKey': 'ARCLMU-9999', 'start': '2022-09-26T10:52:05.417+0100', 'finish': '2022-09-26T10:52:09.449+0100', 'comment': 'Test vinculado al Test Plan ARCLMU-3181 y que se ocupa del perfil POSTPAGO RES...</msg>
+<status status="PASS" starttime="20220926 10:52:09.451" endtime="20220926 10:52:09.452"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{lista_tests}</var>
+<arg>${datos_test}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220926 10:52:09.453" level="INFO">@{lista_tests} = [ {'testKey': 'ARCLMU-9999', 'start': '2022-09-26T10:52:05.417+0100', 'finish': '2022-09-26T10:52:09.449+0100', 'comment': 'Test vinculado al Test Plan ARCLMU-3181 y que se ocupa del perfil POSTPAGO R...</msg>
+<status status="PASS" starttime="20220926 10:52:09.452" endtime="20220926 10:52:09.453"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${xray_test}</var>
+<arg>./output/xray/xray_test.json</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20220926 10:52:09.453" level="INFO" html="true">Getting file '&lt;a href="file:///Users/israel.garate/Desktop/Tsoft/Descargas Tsoft/acmeapporangeosp-master/output/xray/xray_test.json"&gt;/Users/israel.garate/Desktop/Tsoft/Descargas Tsoft/acmeapporangeosp-master/output/xray/xray_test.json&lt;/a&gt;'.</msg>
+<msg timestamp="20220926 10:52:09.454" level="INFO">${xray_test} = {"tests": []}</msg>
+<status status="PASS" starttime="20220926 10:52:09.453" endtime="20220926 10:52:09.454"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${xray_test_eval}</var>
+<arg>json.loads('''${xray_test}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220926 10:52:09.454" level="INFO">${xray_test_eval} = {'tests': []}</msg>
+<status status="PASS" starttime="20220926 10:52:09.454" endtime="20220926 10:52:09.454"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${xray_test_eval['tests']}</arg>
+<arg>@{lista_tests}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220926 10:52:09.455" endtime="20220926 10:52:09.458"/>
+</kw>
+<kw name="Dumps" library="json">
+<var>${xray_test}</var>
+<arg>${xray_test_eval}</arg>
+<arg>ensure_ascii=False</arg>
+<doc>Serialize ``obj`` to a JSON formatted ``str``.</doc>
+<msg timestamp="20220926 10:52:09.459" level="INFO">${xray_test} = {"tests": [{"testKey": "ARCLMU-9999", "start": "2022-09-26T10:52:05.417+0100", "finish": "2022-09-26T10:52:09.449+0100", "comment": "Test vinculado al Test Plan ARCLMU-3181 y que se ocupa del perfil P...</msg>
+<status status="PASS" starttime="20220926 10:52:09.458" endtime="20220926 10:52:09.459"/>
+</kw>
+<kw name="Create File" library="OperatingSystem">
+<arg>./output/xray/xray_test.json</arg>
+<arg>${xray_test}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20220926 10:52:09.460" level="INFO" html="true">Created file '&lt;a href="file:///Users/israel.garate/Desktop/Tsoft/Descargas Tsoft/acmeapporangeosp-master/output/xray/xray_test.json"&gt;/Users/israel.garate/Desktop/Tsoft/Descargas Tsoft/acmeapporangeosp-master/output/xray/xray_test.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220926 10:52:09.459" endtime="20220926 10:52:09.460"/>
+</kw>
+<status status="PASS" starttime="20220926 10:52:09.447" endtime="20220926 10:52:09.460"/>
+</kw>
+<kw name="Fecha y hora de fin de la Suite" library="keywords">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220926 10:52:10.461" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220926 10:52:09.460" endtime="20220926 10:52:10.462"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${fecha_final}</var>
+<arg>result_format=timestamp</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220926 10:52:10.465" level="INFO">${fecha_final} = 2022-09-26 10:52:10.465</msg>
+<status status="PASS" starttime="20220926 10:52:10.464" endtime="20220926 10:52:10.465"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${fecha_final}</var>
+<arg>result_format=%Y-%m-%dT%H:%M:%S.%f</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220926 10:52:10.467" level="INFO">${fecha_final} = 2022-09-26T10:52:10.466696</msg>
+<status status="PASS" starttime="20220926 10:52:10.466" endtime="20220926 10:52:10.467"/>
+</kw>
+<kw name="Get Substring" library="String">
+<var>${fecha_final}</var>
+<arg>${fecha_final}</arg>
+<arg>0</arg>
+<arg>23</arg>
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<msg timestamp="20220926 10:52:10.469" level="INFO">${fecha_final} = 2022-09-26T10:52:10.466</msg>
+<status status="PASS" starttime="20220926 10:52:10.468" endtime="20220926 10:52:10.469"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${json_xray_suite}</var>
+<arg>./output/xray/xray_suite.json</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20220926 10:52:10.470" level="INFO" html="true">Getting file '&lt;a href="file:///Users/israel.garate/Desktop/Tsoft/Descargas Tsoft/acmeapporangeosp-master/output/xray/xray_suite.json"&gt;/Users/israel.garate/Desktop/Tsoft/Descargas Tsoft/acmeapporangeosp-master/output/xray/xray_suite.json&lt;/a&gt;'.</msg>
+<msg timestamp="20220926 10:52:10.471" level="INFO">${json_xray_suite} = {"fields": {"summary": "ACME: AREA CLIENTE MULTIPLATAFORMA ECARE", "description": "", "customfield_14817": "2022-09-26T10:52:04.967+0100", "customfield_14818": "2020-11-03T13:11:53.564+0100", "customf...</msg>
+<status status="PASS" starttime="20220926 10:52:10.470" endtime="20220926 10:52:10.471"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${object}</var>
+<arg>json.loads('''${json_xray_suite}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220926 10:52:10.473" level="INFO">${object} = {'fields': {'summary': 'ACME: AREA CLIENTE MULTIPLATAFORMA ECARE', 'description': '', 'customfield_14817': '2022-09-26T10:52:04.967+0100', 'customfield_14818': '2020-11-03T13:11:53.564+0100', 'customf...</msg>
+<status status="PASS" starttime="20220926 10:52:10.472" endtime="20220926 10:52:10.473"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${object["fields"]}</arg>
+<arg>customfield_14818=${fecha_final}+0100</arg>
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20220926 10:52:10.473" endtime="20220926 10:52:10.479"/>
+</kw>
+<kw name="Dumps" library="json">
+<var>${xray_suite}</var>
+<arg>${object}</arg>
+<arg>ensure_ascii=False</arg>
+<doc>Serialize ``obj`` to a JSON formatted ``str``.</doc>
+<msg timestamp="20220926 10:52:10.480" level="INFO">${xray_suite} = {"fields": {"summary": "ACME: AREA CLIENTE MULTIPLATAFORMA ECARE", "description": "", "customfield_14817": "2022-09-26T10:52:04.967+0100", "customfield_14818": "2022-09-26T10:52:10.466+0100", "customf...</msg>
+<status status="PASS" starttime="20220926 10:52:10.479" endtime="20220926 10:52:10.480"/>
+</kw>
+<kw name="Create File" library="OperatingSystem">
+<arg>./output/xray/xray_suite.json</arg>
+<arg>${xray_suite}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20220926 10:52:10.481" level="INFO" html="true">Created file '&lt;a href="file:///Users/israel.garate/Desktop/Tsoft/Descargas Tsoft/acmeapporangeosp-master/output/xray/xray_suite.json"&gt;/Users/israel.garate/Desktop/Tsoft/Descargas Tsoft/acmeapporangeosp-master/output/xray/xray_suite.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220926 10:52:10.480" endtime="20220926 10:52:10.481"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220926 10:52:15.484" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220926 10:52:10.482" endtime="20220926 10:52:15.484"/>
+</kw>
+<kw name="Graba video hasta aquí" library="keywords">
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="FAIL" starttime="20220926 10:52:15.488" endtime="20220926 10:52:18.990"/>
+</kw>
+<kw name="Stop All Video Recordings" library="ScreenCapLibrary">
+<doc>Stops all the video recordings and generates the files in WebM format. If ``embed`` argument
+was set to ``True`` the videos will be displayed in the log file.</doc>
+<status status="NOT RUN" starttime="20220926 10:52:18.991" endtime="20220926 10:52:18.991"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220926 10:52:18.992" endtime="20220926 10:52:18.992"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Paramos la grabación del video que encontrarás en ./output/robotframework</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220926 10:52:18.993" endtime="20220926 10:52:18.993"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220926 10:52:18.993" endtime="20220926 10:52:18.993"/>
+</kw>
+<status status="FAIL" starttime="20220926 10:52:15.487" endtime="20220926 10:52:18.994"/>
+</kw>
+<status status="FAIL" starttime="20220926 10:52:09.460" endtime="20220926 10:52:18.995"/>
+</kw>
+<status status="FAIL" starttime="20220926 10:52:09.447" endtime="20220926 10:52:18.995">Execution terminated by signal</status>
+</kw>
+<tag>TEST-000-ARCLMU-9999-Prueba de logado</tag>
+<status status="FAIL" starttime="20220926 10:52:05.416" endtime="20220926 10:52:18.996">Variable '${env}' not found.
+
+Also teardown failed:
+Execution terminated by signal</status>
+</test>
+<test id="s1-t3" name="ARCLMU-8888">
+<tag>robot:exit</tag>
+<tag>TEST-001-ARCLMU-8888-Correcta visualización de dashboard POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.026" endtime="20220926 10:52:19.026">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t4" name="ARCLMU-1411">
+<tag>robot:exit</tag>
+<tag>TEST-001-ARCLMU-1411-Correcta visualización de dashboard POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.044" endtime="20220926 10:52:19.044">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t5" name="ARCLMU-8123">
+<tag>robot:exit</tag>
+<tag>TEST-002-ARCLMU-8123-Correcta visualización de los contadores del dashboard POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.058" endtime="20220926 10:52:19.059">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t6" name="ARCLMU-8124">
+<tag>robot:exit</tag>
+<tag>TEST-003-ARCLMU-8124-Correcta visualización del componente días para última factura POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.072" endtime="20220926 10:52:19.072">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t7" name="ARCLMU-8125">
+<tag>robot:exit</tag>
+<tag>TEST-004-ARCLMU-8125-Correcta carga del selector de dashboard POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.084" endtime="20220926 10:52:19.084">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t8" name="ARCLMU-8126">
+<tag>robot:exit</tag>
+<tag>TEST-005-ARCLMU-8126-Comprobación del dashboard de Fijo POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.096" endtime="20220926 10:52:19.096">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t9" name="ARCLMU-8127">
+<tag>robot:exit</tag>
+<tag>TEST-006-ARCLMU-8127-Comprobación del dashboard de TV POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.108" endtime="20220926 10:52:19.108">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t10" name="ARCLMU-1412">
+<tag>robot:exit</tag>
+<tag>TEST-007-ARCLMU-1412-Visualización correcta de la página de Mi línea POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.120" endtime="20220926 10:52:19.121">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t11" name="ARCLMU-1414">
+<tag>robot:exit</tag>
+<tag>TEST-008-ARCLMU-1414-Visualización de la página de Facturas POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.132" endtime="20220926 10:52:19.132">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t12" name="ARCLMU-1415">
+<tag>robot:exit</tag>
+<tag>TEST-009-ARCLMU-1415-Correcta visualizacion de la página de Contrata POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.144" endtime="20220926 10:52:19.144">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t13" name="ARCLMU-1416">
+<tag>robot:exit</tag>
+<tag>TEST-010-ARCLMU-1416-Sección Ayuda POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.156" endtime="20220926 10:52:19.156">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t14" name="ARCLMU-1424">
+<tag>robot:exit</tag>
+<tag>TEST-011-ARCLMU-1424-Buscador POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.168" endtime="20220926 10:52:19.168">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t15" name="ARCLMU-1440">
+<tag>robot:exit</tag>
+<tag>TEST-012-ARCLMU-1440-Acceso Ser de Orange (SdO) y consulta Ventajas, Hucha, Servicios Extra y Descuentos POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.180" endtime="20220926 10:52:19.180">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t16" name="ARCLMU-3555">
+<tag>robot:exit</tag>
+<tag>TEST-013-ARCLMU-3555-Consulta de Compromiso Permanencia POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.192" endtime="20220926 10:52:19.192">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t17" name="ARCLMU-8652">
+<tag>robot:exit</tag>
+<tag>TEST-014-ARCLMU-8652-Correcta visualización de dashboard de Mis consumos POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.204" endtime="20220926 10:52:19.204">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t18" name="ARCLMU-8653">
+<tag>robot:exit</tag>
+<tag>TEST-015-ARCLMU-8653-Correcta visualización de las Notificaciones POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.215" endtime="20220926 10:52:19.215">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t19" name="ARCLMU-8654">
+<tag>robot:exit</tag>
+<tag>TEST-016-ARCLMU-8654-Comprobar la página de Ajustes de Notificaciones POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.227" endtime="20220926 10:52:19.227">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t20" name="ARCLMU-8655">
+<tag>robot:exit</tag>
+<tag>TEST-017-ARCLMU-8655-Comprobar página de Mi contrato POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.239" endtime="20220926 10:52:19.239">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t21" name="ARCLMU-8656">
+<tag>robot:exit</tag>
+<tag>TEST-018-ARCLMU-8656-Comprobar página de Mis datos personales POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.251" endtime="20220926 10:52:19.251">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t22" name="ARCLMU-8657">
+<tag>robot:exit</tag>
+<tag>TEST-019-ARCLMU-8657-Comprobar página de Mi documento POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.263" endtime="20220926 10:52:19.263">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t23" name="ARCLMU-8658">
+<tag>robot:exit</tag>
+<tag>TEST-020-ARCLMU-8658-Comprobar página Revisión de privacidad POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.275" endtime="20220926 10:52:19.275">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t24" name="ARCLMU-8659">
+<tag>robot:exit</tag>
+<tag>TEST-021-ARCLMU-8659-Componente Mis servicios contratados POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.287" endtime="20220926 10:52:19.287">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t25" name="ARCLMU-8662">
+<tag>robot:exit</tag>
+<tag>TEST-024-ARCLMU-8662-Djingo POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.298" endtime="20220926 10:52:19.299">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t26" name="ARCLMU-8763">
+<tag>robot:exit</tag>
+<tag>TEST-025-ARCLMU-8763-Comprobación de la página de 13 facturas POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.310" endtime="20220926 10:52:19.310">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t27" name="ARCLMU-8764">
+<tag>robot:exit</tag>
+<tag>TEST-026-ARCLMU-8764-Comprobación de la página de Facturas antiguas POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.322" endtime="20220926 10:52:19.323">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t28" name="ARCLMU-8765">
+<tag>robot:exit</tag>
+<tag>TEST-027-ARCLMU-8765-Comprobación de la página Dudas con tu factura POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.334" endtime="20220926 10:52:19.335">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t29" name="ARCLMU-8767">
+<tag>robot:exit</tag>
+<tag>TEST-029-ARCLMU-8767-Comprobación del dashboard de Ajustes de factura POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.346" endtime="20220926 10:52:19.346">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t30" name="ARCLMU-8769">
+<tag>robot:exit</tag>
+<tag>TEST-031-ARCLMU-8769-Comprobación de la página Dudas consulta factura POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.358" endtime="20220926 10:52:19.358">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t31" name="ARCLMU-8770">
+<tag>robot:exit</tag>
+<tag>TEST-032-ARCLMU-8770-Comprobación de la página Dudas consulta pagos POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.370" endtime="20220926 10:52:19.370">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t32" name="ARCLMU-8771">
+<tag>robot:exit</tag>
+<tag>TEST-033-ARCLMU-8771-Comprobación de la página Dudas descuentos y promociones POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.381" endtime="20220926 10:52:19.381">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t33" name="ARCLMU-8895">
+<tag>robot:exit</tag>
+<tag>TEST-034-ARCLMU-8895-Comprobación de la página de detalle de consumos fijo POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.393" endtime="20220926 10:52:19.393">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t34" name="ARCLMU-8896">
+<tag>robot:exit</tag>
+<tag>TEST-035-ARCLMU-8896-Comprobación de la página de Detalle de consumos móvil POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.405" endtime="20220926 10:52:19.405">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t35" name="ARCLMU-8897">
+<tag>robot:exit</tag>
+<tag>TEST-036-ARCLMU-8897-Comprobación de la página de Gasto adicional POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.417" endtime="20220926 10:52:19.417">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t36" name="ARCLMU-8898">
+<tag>robot:exit</tag>
+<tag>TEST-037-ARCLMU-8898-Comprobación de la página de ayuda Diagnostico e incidencias POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.428" endtime="20220926 10:52:19.429">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t37" name="ARCLMU-8899">
+<tag>robot:exit</tag>
+<tag>TEST-038-ARCLMU-8899-Comprobación de la página de ayuda Seguimiento de casos POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.441" endtime="20220926 10:52:19.441">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t38" name="ARCLMU-8900">
+<tag>robot:exit</tag>
+<tag>TEST-039-ARCLMU-8900-Comprobación de la página de ayuda Algo no funciona POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.453" endtime="20220926 10:52:19.453">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t39" name="ARCLMU-8901">
+<tag>robot:exit</tag>
+<tag>TEST-040-ARCLMU-8901-Comprobación de la página de ayuda Dispositivo estropeado POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.464" endtime="20220926 10:52:19.464">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t40" name="ARCLMU-8902">
+<tag>robot:exit</tag>
+<tag>TEST-041-ARCLMU-8902-Comprobación de la página de ayuda Estado de mi pedido POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.476" endtime="20220926 10:52:19.476">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t41" name="ARCLMU-8903">
+<tag>robot:exit</tag>
+<tag>TEST-042-ARCLMU-8903-Comprobación de la página de ayuda Cancelar pedido explicativo POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.488" endtime="20220926 10:52:19.488">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t42" name="ARCLMU-8904">
+<tag>robot:exit</tag>
+<tag>TEST-043-ARCLMU-8904-Comprobación de la página de ayuda Mi linea POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.499" endtime="20220926 10:52:19.499">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t43" name="ARCLMU-8905">
+<tag>robot:exit</tag>
+<tag>TEST-044-ARCLMU-8905-Comprobación de la página de ayuda Servicios a terceros explicativa POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.511" endtime="20220926 10:52:19.511">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t44" name="ARCLMU-8906">
+<tag>robot:exit</tag>
+<tag>TEST-045-ARCLMU-8906-Comprobación de la página de ayuda Factura POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.523" endtime="20220926 10:52:19.523">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t45" name="ARCLMU-8907">
+<tag>robot:exit</tag>
+<tag>TEST-046-ARCLMU-8907-Comprobación de la página de ayuda Contacta con Orange POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.535" endtime="20220926 10:52:19.535">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t46" name="ARCLMU-8908">
+<tag>robot:exit</tag>
+<tag>TEST-047-ARCLMU-8908-Comprobación de la página de ayuda Factura impagada POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.546" endtime="20220926 10:52:19.546">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t47" name="ARCLMU-8909">
+<tag>robot:exit</tag>
+<tag>TEST-048-ARCLMU-8909-Comprobación de la página de ayuda Preguntas frecuentes POSTPAGO RESI</tag>
+<status status="FAIL" starttime="20220926 10:52:19.558" endtime="20220926 10:52:19.558">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t48" name="POSTCONDICION">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20220926 10:52:19.570" endtime="20220926 10:52:19.570">Test execution stopped due to a fatal error.</status>
+</test>
+<status status="FAIL" starttime="20220926 10:52:04.188" endtime="20220926 10:52:19.582"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="48" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="2" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+<stat pass="0" fail="1" skip="0">TEST-000-ARCLMU-9999-Prueba de logado</stat>
+<stat pass="0" fail="1" skip="0">TEST-001-ARCLMU-1411-Correcta visualización de dashboard POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-001-ARCLMU-8888-Correcta visualización de dashboard POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-002-ARCLMU-8123-Correcta visualización de los contadores del dashboard POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-003-ARCLMU-8124-Correcta visualización del componente días para última factura POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-004-ARCLMU-8125-Correcta carga del selector de dashboard POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-005-ARCLMU-8126-Comprobación del dashboard de Fijo POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-006-ARCLMU-8127-Comprobación del dashboard de TV POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-007-ARCLMU-1412-Visualización correcta de la página de Mi línea POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-008-ARCLMU-1414-Visualización de la página de Facturas POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-009-ARCLMU-1415-Correcta visualizacion de la página de Contrata POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-010-ARCLMU-1416-Sección Ayuda POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-011-ARCLMU-1424-Buscador POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-012-ARCLMU-1440-Acceso Ser de Orange (SdO) y consulta Ventajas, Hucha, Servicios Extra y Descuentos POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-013-ARCLMU-3555-Consulta de Compromiso Permanencia POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-014-ARCLMU-8652-Correcta visualización de dashboard de Mis consumos POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-015-ARCLMU-8653-Correcta visualización de las Notificaciones POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-016-ARCLMU-8654-Comprobar la página de Ajustes de Notificaciones POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-017-ARCLMU-8655-Comprobar página de Mi contrato POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-018-ARCLMU-8656-Comprobar página de Mis datos personales POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-019-ARCLMU-8657-Comprobar página de Mi documento POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-020-ARCLMU-8658-Comprobar página Revisión de privacidad POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-021-ARCLMU-8659-Componente Mis servicios contratados POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-024-ARCLMU-8662-Djingo POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-025-ARCLMU-8763-Comprobación de la página de 13 facturas POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-026-ARCLMU-8764-Comprobación de la página de Facturas antiguas POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-027-ARCLMU-8765-Comprobación de la página Dudas con tu factura POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-029-ARCLMU-8767-Comprobación del dashboard de Ajustes de factura POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-031-ARCLMU-8769-Comprobación de la página Dudas consulta factura POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-032-ARCLMU-8770-Comprobación de la página Dudas consulta pagos POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-033-ARCLMU-8771-Comprobación de la página Dudas descuentos y promociones POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-034-ARCLMU-8895-Comprobación de la página de detalle de consumos fijo POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-035-ARCLMU-8896-Comprobación de la página de Detalle de consumos móvil POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-036-ARCLMU-8897-Comprobación de la página de Gasto adicional POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-037-ARCLMU-8898-Comprobación de la página de ayuda Diagnostico e incidencias POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-038-ARCLMU-8899-Comprobación de la página de ayuda Seguimiento de casos POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-039-ARCLMU-8900-Comprobación de la página de ayuda Algo no funciona POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-040-ARCLMU-8901-Comprobación de la página de ayuda Dispositivo estropeado POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-041-ARCLMU-8902-Comprobación de la página de ayuda Estado de mi pedido POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-042-ARCLMU-8903-Comprobación de la página de ayuda Cancelar pedido explicativo POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-043-ARCLMU-8904-Comprobación de la página de ayuda Mi linea POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-044-ARCLMU-8905-Comprobación de la página de ayuda Servicios a terceros explicativa POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-045-ARCLMU-8906-Comprobación de la página de ayuda Factura POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-046-ARCLMU-8907-Comprobación de la página de ayuda Contacta con Orange POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-047-ARCLMU-8908-Comprobación de la página de ayuda Factura impagada POSTPAGO RESI</stat>
+<stat pass="0" fail="1" skip="0">TEST-048-ARCLMU-8909-Comprobación de la página de ayuda Preguntas frecuentes POSTPAGO RESI</stat>
+</tag>
+<suite>
+<stat pass="0" fail="48" skip="0" id="s1" name="ARCLMU-3181">ARCLMU-3181</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

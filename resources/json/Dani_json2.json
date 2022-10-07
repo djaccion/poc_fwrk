@@ -1,0 +1,18 @@
+{
+    "tests": [
+        {
+            "testKey": "SQAPA-4215",
+            "start": "2020-11-03T13:11:52+01:00",
+            "finish": "2020-11-03T13:11:53+01:00",
+            "comment": " Consulta Ventana de Cambio",
+            "status": "PASS"
+        },
+        {
+            "testKey": "SQAPA-4216",
+            "start": "2020-11-03T13:11:53+01:00",
+            "finish": "2020-11-03T13:11:53+01:00",
+            "comment": " Consulta Ventana de Cambio",
+            "status": "PASS"
+        }
+    ]
+}
