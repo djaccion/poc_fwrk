@@ -8,7 +8,7 @@ Library    RequestsLibrary
 Library    DateTime
 Library    ScreenCapLibrary
 Library    Process
-Library    ..//libraries//travelfree.py
+Library    ..//Libraries//travelfree.py
 Resource    ..//resources//recursos.robot
 Resource    ..//resources//config.robot
 Resource    ..//resources//inventario_elementos.robot
