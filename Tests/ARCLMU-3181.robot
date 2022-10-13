@@ -8,7 +8,7 @@ Resource    ..//resources//keywords_valida.robot
 Resource    ..//resources//teardown_ARCLMU_3181.robot
 #Library           SikuliLibrary
 
-Test Teardown    Teardown ${TEST_NAME}
+#Test Teardown    Teardown ${TEST_NAME}
 
 *** Variables ***
 ${perfil}        POSTPAGO RESI
@@ -32,7 +32,7 @@ ARCLMU-9999
     #Deslogarte
     Probar login KO contraseña
     #Probar login KO pasaporte
-    Logado OK
+    #Logado OK
     
 # ARCLMU-8888
 #     [Tags]    TEST-001-ARCLMU-8888-Correcta visualización de dashboard POSTPAGO RESI

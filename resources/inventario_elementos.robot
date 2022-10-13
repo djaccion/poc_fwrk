@@ -180,15 +180,17 @@ ${aspa_NBA}     xpath=/hierarchy/android.widget.FrameLayout/android.widget.Linea
 
 ${tutorial}    xpath=//*[@id="undefined"]/div/div/div/div[2]/div/owl-carousel/owl-carousel-child/div[1]/div/div[2]/div/div[1]
 ${aspa_tutorial}    xpath=//*[@id="undefined"]/div/div/div/div[3]/button
+${denegar_contactos}  xpath=//*[contains(text(),"Denegar")]
+${cerrar_promocion}  xpath=//*[contains(text(),"Cerrar")]
 
 
 #############   SELECTOR DE PRODUCTOS
 
-${selector_movil}   xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View[3]
+${selector_movil}   xpath=(//android.view.View//descendant::android.widget.TextView[@text="Entretenimiento"]//following-sibling::android.view.View)[1]
 
 ${fijo}     xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View[5]
 
-${TV}   xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View[1]
+${TV}   xpath=//android.view.View//descendant::android.widget.TextView[@text="Entretenimiento"]
 
 ${chevron_selector_linea}     xpath=/html/body/app-root/ocs-app-theme/ocs-theme-orange/div/div/div/ocs-menu/div/cms-module-render[2]/ocs-container-selector-lines-web/ocs-selector-lines-web/div/ul/ocs-carousel/div/button[2]
 ${Altamira}    xpath=/html/body/app-root/ocs-app-theme/ocs-theme-orange/div/div/div/cms-dinamic-page/cms-layout/div/div[5]/div/div/div[1]/div/cms-module-render/ocs-module-grouper/div/cms-module-render[6]/ocs-container-generic-module/ocs-link[1]/div/div/a

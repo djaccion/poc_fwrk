@@ -16,8 +16,8 @@ Resource    ..//resources//inventario_urls.robot
 Resource    ..//resources//inventario_valida.robot
 
 *** Variables ***
-${USERNAME}     isratw_I4H2aM     #browserstack
-${ACCESS_KEY}   Tz9pt7mV6wq5ghjZAi7F    #browserstack
+${USERNAME}     israelgarate_AfvMUY     #browserstack
+${ACCESS_KEY}   wMUGsFAb1ewu2KiewPsf    #browserstack
 #${USERNAME}     israelgarate     #saucelabs
 #${ACCESS_KEY}   45608504-990d-4f4d-8902-f8911cb92a1e    #saucelabs
 ${PLATFORM_NAME}        Android             #Android
@@ -55,7 +55,7 @@ Abro app
     ...                 device=${DEVICE_NAME}  #BrowserStack
     #...                 deviceName=${DEVICE_NAME}   #saucelabs
     ...                 deviceOrientation=${DEVICE_ORIENTATION} 
-    ...                 app=bs://cbd6c80adca1944db03ee7051cbbca4cea772094                   #BrowserStack android
+    ...                 app=bs://54a7409a873de79a36f54f2991e01e2875f60902                  #BrowserStack android
     #...                 app=storage:filename=acmeorange-pro-unsigned-release-1.22.1.apk                        #saucelabs android
     #...                 app=bs://16a3961a9ef02c000c444c7fd19dc0f0e60e7acb                 #BrowserStack ios
     #...                 app=storage:filename=ipa_produccion_ACME.ipa                       #saucelabs ios
@@ -239,7 +239,7 @@ Cierro tutorial
     Click Element At Coordinates       987  187
     Sleep   2
     Log To Console      Intento cerrar el tutorial
-    Go To Url   url=${env}${pag_dashboard}
+    #Go To Url   url=${env}${pag_dashboard}
     Cierro NBA si existe
 
 Logado OK
@@ -248,8 +248,9 @@ Logado OK
     Input Password      ${input_password}   ${CREDENTIALS_${perfil}_${entorno}}[PASS]
     Sleep   2
     Click Element   ${boton_entrar}
-    Cierro tutorial
-    Click Element   ${TV}
+    Sleep  10
+    Sleep  5
+    Click Element   ${aspa_NBA}
     Cierro tutorial
     Click Element   ${selector_movil}
     Cierro tutorial
