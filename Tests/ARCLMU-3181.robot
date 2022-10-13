@@ -8,7 +8,7 @@ Resource    ..//resources//keywords_valida.robot
 Resource    ..//resources//teardown_ARCLMU_3181.robot
 #Library           SikuliLibrary
 
-#Test Teardown    Teardown ${TEST_NAME}
+Test Teardown    Teardown ${TEST_NAME}
 
 *** Variables ***
 ${perfil}        POSTPAGO RESI
