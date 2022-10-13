@@ -32,7 +32,7 @@ ARCLMU-9999
     #Deslogarte
     Probar login KO contraseña
     #Probar login KO pasaporte
-    #Logado OK
+    Logado OK
     
 # ARCLMU-8888
 #     [Tags]    TEST-001-ARCLMU-8888-Correcta visualización de dashboard POSTPAGO RESI

@@ -7,6 +7,7 @@ Library    AppiumLibrary
 
 ${boton_entrar}    //*[@resource-id='ocsLoginPassword_btn_submitLoginForm'] 
 
+
 	
 ${input_user}        xpath=//android.view.View[@resource-id="ocsLoginPassword_input_userNameField"]/descendant::android.widget.EditText
 ${input_password}    xpath=//android.view.View[@resource-id="ocsLoginPassword_input_passwordField"]/descendant::android.widget.EditText
@@ -27,6 +28,7 @@ ${cambiar_contraseña}   //*[@resource-id='ocsLoginPassword_btn_resetPassword']
 ${MC_contraseña}   //*[@resource-id='ocsLogin_text_changeLoginTypeTitle'] 
 
 ${boton_cerrarModal}   xpath=(//button[@title="Cerrar ventana modal"])[2]
+
 
 
 
@@ -180,10 +182,9 @@ ${aspa_NBA}     xpath=/hierarchy/android.widget.FrameLayout/android.widget.Linea
 
 ${tutorial}    xpath=//*[@id="undefined"]/div/div/div/div[2]/div/owl-carousel/owl-carousel-child/div[1]/div/div[2]/div/div[1]
 ${aspa_tutorial}    xpath=//*[@id="undefined"]/div/div/div/div[3]/button
-${denegar_contactos}  xpath=//*[contains(text(),"Denegar")]
+${denegar_contactos}  xpath=//android.widget.TextView[@text="Gasto extra"]
 ${cerrar_promocion}  xpath=//*[contains(text(),"Cerrar")]
-
-
+${consumo}  xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[1]/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.widget.TextView
 #############   SELECTOR DE PRODUCTOS
 
 ${selector_movil}   xpath=(//android.view.View//descendant::android.widget.TextView[@text="Entretenimiento"]//following-sibling::android.view.View)[1]

@@ -249,11 +249,12 @@ Logado OK
     Sleep   2
     Click Element   ${boton_entrar}
     Sleep  10
+    Click Element   ${denegar_contactos}
     Sleep  5
-    Click Element   ${aspa_NBA}
-    Cierro tutorial
-    Click Element   ${selector_movil}
-    Cierro tutorial
+    Click Element   ${consumo}
+    Sleep  10 
+    Click Element   ${consumo}
+
 
 Acceder al dashboard principal
     Sleep   4
