@@ -55,7 +55,7 @@ Abro app
     ...                 device=${DEVICE_NAME}  #BrowserStack
     #...                 deviceName=${DEVICE_NAME}   #saucelabs
     ...                 deviceOrientation=${DEVICE_ORIENTATION} 
-    ...                 app=bs://54a7409a873de79a36f54f2991e01e2875f60902                  #BrowserStack android
+    ...                 app=bs://c762db409936c25655355210098c9ae4b93ccaa3                  #BrowserStack android
     #...                 app=storage:filename=acmeorange-pro-unsigned-release-1.22.1.apk                        #saucelabs android
     #...                 app=bs://16a3961a9ef02c000c444c7fd19dc0f0e60e7acb                 #BrowserStack ios
     #...                 app=storage:filename=ipa_produccion_ACME.ipa                       #saucelabs ios
