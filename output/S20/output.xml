@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.2 (Python 3.10.6 on darwin)" generated="20221019 17:42:26.061" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.2 (Python 3.10.6 on darwin)" generated="20221019 17:50:25.212" rpa="false" schemaversion="2">
 <suite id="s1" name="ARCLMU-3181" source="/Users/israel.garate/Documents/poc_fwrk/Tests/ARCLMU-3181.robot">
 <test id="s1-t1" name="PRECONDICION">
 <kw name="Fecha y hora de inicio de la Suite" library="keywords">
@@ -7,15 +7,15 @@
 <var>${fecha_inicial}</var>
 <arg>result_format=timestamp</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<msg timestamp="20221019 17:42:26.938" level="INFO">${fecha_inicial} = 2022-10-19 17:42:26.938</msg>
-<status status="PASS" starttime="20221019 17:42:26.938" endtime="20221019 17:42:26.938"/>
+<msg timestamp="20221019 17:50:26.187" level="INFO">${fecha_inicial} = 2022-10-19 17:50:26.187</msg>
+<status status="PASS" starttime="20221019 17:50:26.187" endtime="20221019 17:50:26.187"/>
 </kw>
 <kw name="Get Current Date" library="DateTime">
 <var>${fecha_inicial}</var>
 <arg>result_format=%Y-%m-%dT%H:%M:%S.%f</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<msg timestamp="20221019 17:42:26.938" level="INFO">${fecha_inicial} = 2022-10-19T17:42:26.938386</msg>
-<status status="PASS" starttime="20221019 17:42:26.938" endtime="20221019 17:42:26.938"/>
+<msg timestamp="20221019 17:50:26.187" level="INFO">${fecha_inicial} = 2022-10-19T17:50:26.187324</msg>
+<status status="PASS" starttime="20221019 17:50:26.187" endtime="20221019 17:50:26.187"/>
 </kw>
 <kw name="Get Substring" library="String">
 <var>${fecha_inicial}</var>
@@ -23,183 +23,183 @@
 <arg>0</arg>
 <arg>23</arg>
 <doc>Returns a substring from ``start`` index to ``end`` index.</doc>
-<msg timestamp="20221019 17:42:26.939" level="INFO">${fecha_inicial} = 2022-10-19T17:42:26.938</msg>
-<status status="PASS" starttime="20221019 17:42:26.938" endtime="20221019 17:42:26.939"/>
+<msg timestamp="20221019 17:50:26.188" level="INFO">${fecha_inicial} = 2022-10-19T17:50:26.187</msg>
+<status status="PASS" starttime="20221019 17:50:26.187" endtime="20221019 17:50:26.188"/>
 </kw>
 <kw name="Create List" library="BuiltIn">
 <var>${lista_testplan}</var>
 <arg>${test_plan}</arg>
 <doc>Returns a list containing given items.</doc>
-<msg timestamp="20221019 17:42:26.939" level="INFO">${lista_testplan} = ['ARCLMU-3181']</msg>
-<status status="PASS" starttime="20221019 17:42:26.939" endtime="20221019 17:42:26.939"/>
+<msg timestamp="20221019 17:50:26.188" level="INFO">${lista_testplan} = ['ARCLMU-3181']</msg>
+<status status="PASS" starttime="20221019 17:50:26.188" endtime="20221019 17:50:26.188"/>
 </kw>
 <kw name="Get File" library="OperatingSystem">
 <var>${json_xray_suite}</var>
 <arg>./resources/json/xray_suite_plantilla.json</arg>
 <doc>Returns the contents of a specified file.</doc>
-<msg timestamp="20221019 17:42:26.939" level="INFO" html="true">Getting file '&lt;a href="file:///Users/israel.garate/Documents/poc_fwrk/resources/json/xray_suite_plantilla.json"&gt;/Users/israel.garate/Documents/poc_fwrk/resources/json/xray_suite_plantilla.json&lt;/a&gt;'.</msg>
-<msg timestamp="20221019 17:42:26.939" level="INFO">${json_xray_suite} = {
+<msg timestamp="20221019 17:50:26.188" level="INFO" html="true">Getting file '&lt;a href="file:///Users/israel.garate/Documents/poc_fwrk/resources/json/xray_suite_plantilla.json"&gt;/Users/israel.garate/Documents/poc_fwrk/resources/json/xray_suite_plantilla.json&lt;/a&gt;'.</msg>
+<msg timestamp="20221019 17:50:26.188" level="INFO">${json_xray_suite} = {
     "fields": {
         "summary": "ACME: AREA CLIENTE MULTIPLATAFORMA ECARE",
         "description": "",
         "customfield_14817": "2021-02-07T18:11:43.537+0100",
         "customfield_14818": "2...</msg>
-<status status="PASS" starttime="20221019 17:42:26.939" endtime="20221019 17:42:26.939"/>
+<status status="PASS" starttime="20221019 17:50:26.188" endtime="20221019 17:50:26.188"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${object}</var>
 <arg>json.loads('''${json_xray_suite}''')</arg>
 <arg>json</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20221019 17:42:26.939" level="INFO">${object} = {'fields': {'summary': 'ACME: AREA CLIENTE MULTIPLATAFORMA ECARE', 'description': '', 'customfield_14817': '2021-02-07T18:11:43.537+0100', 'customfield_14818': '2020-11-03T13:11:53.564+0100', 'customf...</msg>
-<status status="PASS" starttime="20221019 17:42:26.939" endtime="20221019 17:42:26.939"/>
+<msg timestamp="20221019 17:50:26.188" level="INFO">${object} = {'fields': {'summary': 'ACME: AREA CLIENTE MULTIPLATAFORMA ECARE', 'description': '', 'customfield_14817': '2021-02-07T18:11:43.537+0100', 'customfield_14818': '2020-11-03T13:11:53.564+0100', 'customf...</msg>
+<status status="PASS" starttime="20221019 17:50:26.188" endtime="20221019 17:50:26.188"/>
 </kw>
 <kw name="Set To Dictionary" library="Collections">
 <arg>${object["fields"]}</arg>
 <arg>customfield_14817=${fecha_inicial}+0100</arg>
 <doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
-<status status="PASS" starttime="20221019 17:42:26.939" endtime="20221019 17:42:26.941"/>
+<status status="PASS" starttime="20221019 17:50:26.188" endtime="20221019 17:50:26.190"/>
 </kw>
 <kw name="Set To Dictionary" library="Collections">
 <arg>${object["fields"]}</arg>
 <arg>customfield_14827=${lista_testplan}</arg>
 <doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
-<status status="PASS" starttime="20221019 17:42:26.941" endtime="20221019 17:42:26.943"/>
+<status status="PASS" starttime="20221019 17:50:26.190" endtime="20221019 17:50:26.192"/>
 </kw>
 <kw name="Dumps" library="json">
 <var>${xray_suite}</var>
 <arg>${object}</arg>
 <arg>ensure_ascii=False</arg>
 <doc>Serialize ``obj`` to a JSON formatted ``str``.</doc>
-<msg timestamp="20221019 17:42:26.943" level="INFO">${xray_suite} = {"fields": {"summary": "ACME: AREA CLIENTE MULTIPLATAFORMA ECARE", "description": "", "customfield_14817": "2022-10-19T17:42:26.938+0100", "customfield_14818": "2020-11-03T13:11:53.564+0100", "customf...</msg>
-<status status="PASS" starttime="20221019 17:42:26.943" endtime="20221019 17:42:26.943"/>
+<msg timestamp="20221019 17:50:26.192" level="INFO">${xray_suite} = {"fields": {"summary": "ACME: AREA CLIENTE MULTIPLATAFORMA ECARE", "description": "", "customfield_14817": "2022-10-19T17:50:26.187+0100", "customfield_14818": "2020-11-03T13:11:53.564+0100", "customf...</msg>
+<status status="PASS" starttime="20221019 17:50:26.192" endtime="20221019 17:50:26.192"/>
 </kw>
 <kw name="Create File" library="OperatingSystem">
 <arg>./output/xray/xray_suite.json</arg>
 <arg>${xray_suite}</arg>
 <doc>Creates a file with the given content and encoding.</doc>
-<msg timestamp="20221019 17:42:26.944" level="INFO" html="true">Created file '&lt;a href="file:///Users/israel.garate/Documents/poc_fwrk/output/xray/xray_suite.json"&gt;/Users/israel.garate/Documents/poc_fwrk/output/xray/xray_suite.json&lt;/a&gt;'.</msg>
-<status status="PASS" starttime="20221019 17:42:26.943" endtime="20221019 17:42:26.944"/>
+<msg timestamp="20221019 17:50:26.192" level="INFO" html="true">Created file '&lt;a href="file:///Users/israel.garate/Documents/poc_fwrk/output/xray/xray_suite.json"&gt;/Users/israel.garate/Documents/poc_fwrk/output/xray/xray_suite.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20221019 17:50:26.192" endtime="20221019 17:50:26.192"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>*</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:26.944" endtime="20221019 17:42:26.944"/>
+<status status="PASS" starttime="20221019 17:50:26.193" endtime="20221019 17:50:26.193"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>*****************************************************************************************************************************************</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:26.944" endtime="20221019 17:42:26.944"/>
+<status status="PASS" starttime="20221019 17:50:26.193" endtime="20221019 17:50:26.193"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>*****************************************************************************************************************************************</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:26.944" endtime="20221019 17:42:26.944"/>
+<status status="PASS" starttime="20221019 17:50:26.193" endtime="20221019 17:50:26.193"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>*****************************************************************************************************************************************</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:26.944" endtime="20221019 17:42:26.944"/>
+<status status="PASS" starttime="20221019 17:50:26.193" endtime="20221019 17:50:26.193"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>*****************************************************************************************************************************************</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:26.944" endtime="20221019 17:42:26.944"/>
+<status status="PASS" starttime="20221019 17:50:26.193" endtime="20221019 17:50:26.193"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>TEST PLAN QUE SE INICIA:</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:26.944" endtime="20221019 17:42:26.944"/>
+<status status="PASS" starttime="20221019 17:50:26.193" endtime="20221019 17:50:26.193"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${test_plan}-[ACME-TEST PLAN-AUTOMATIC]-Batería de Pruebas de regresión automáticas ${perfil}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:26.944" endtime="20221019 17:42:26.944"/>
+<status status="PASS" starttime="20221019 17:50:26.193" endtime="20221019 17:50:26.193"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>*</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:26.944" endtime="20221019 17:42:26.945"/>
+<status status="PASS" starttime="20221019 17:50:26.193" endtime="20221019 17:50:26.193"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Lo vamos a ejecutar contra el entorno ${entorno} y sobre un navegador ${deviceName}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:26.945" endtime="20221019 17:42:26.945"/>
+<status status="PASS" starttime="20221019 17:50:26.193" endtime="20221019 17:50:26.193"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>*****************************************************************************************************************************************</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:26.945" endtime="20221019 17:42:26.945"/>
+<status status="PASS" starttime="20221019 17:50:26.194" endtime="20221019 17:50:26.194"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>*****************************************************************************************************************************************</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:26.945" endtime="20221019 17:42:26.945"/>
+<status status="PASS" starttime="20221019 17:50:26.194" endtime="20221019 17:50:26.194"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>*****************************************************************************************************************************************</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:26.945" endtime="20221019 17:42:26.945"/>
+<status status="PASS" starttime="20221019 17:50:26.194" endtime="20221019 17:50:26.194"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>*****************************************************************************************************************************************</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:26.945" endtime="20221019 17:42:26.945"/>
+<status status="PASS" starttime="20221019 17:50:26.194" endtime="20221019 17:50:26.194"/>
 </kw>
-<status status="PASS" starttime="20221019 17:42:26.938" endtime="20221019 17:42:26.945"/>
+<status status="PASS" starttime="20221019 17:50:26.187" endtime="20221019 17:50:26.194"/>
 </kw>
 <kw name="Preparo fecha y hora de los tests" library="keywords">
 <kw name="Get File" library="OperatingSystem">
 <var>${json_xray_test}</var>
 <arg>./resources/json/xray_test_plantilla.json</arg>
 <doc>Returns the contents of a specified file.</doc>
-<msg timestamp="20221019 17:42:26.945" level="INFO" html="true">Getting file '&lt;a href="file:///Users/israel.garate/Documents/poc_fwrk/resources/json/xray_test_plantilla.json"&gt;/Users/israel.garate/Documents/poc_fwrk/resources/json/xray_test_plantilla.json&lt;/a&gt;'.</msg>
-<msg timestamp="20221019 17:42:26.946" level="INFO">${json_xray_test} = {
+<msg timestamp="20221019 17:50:26.194" level="INFO" html="true">Getting file '&lt;a href="file:///Users/israel.garate/Documents/poc_fwrk/resources/json/xray_test_plantilla.json"&gt;/Users/israel.garate/Documents/poc_fwrk/resources/json/xray_test_plantilla.json&lt;/a&gt;'.</msg>
+<msg timestamp="20221019 17:50:26.194" level="INFO">${json_xray_test} = {
     "tests": []
 }</msg>
-<status status="PASS" starttime="20221019 17:42:26.945" endtime="20221019 17:42:26.946"/>
+<status status="PASS" starttime="20221019 17:50:26.194" endtime="20221019 17:50:26.194"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${object}</var>
 <arg>json.loads('''${json_xray_test}''')</arg>
 <arg>json</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20221019 17:42:26.946" level="INFO">${object} = {'tests': []}</msg>
-<status status="PASS" starttime="20221019 17:42:26.946" endtime="20221019 17:42:26.946"/>
+<msg timestamp="20221019 17:50:26.195" level="INFO">${object} = {'tests': []}</msg>
+<status status="PASS" starttime="20221019 17:50:26.194" endtime="20221019 17:50:26.195"/>
 </kw>
 <kw name="Dumps" library="json">
 <var>${json_xray_test}</var>
 <arg>${object}</arg>
 <arg>ensure_ascii=False</arg>
 <doc>Serialize ``obj`` to a JSON formatted ``str``.</doc>
-<msg timestamp="20221019 17:42:26.946" level="INFO">${json_xray_test} = {"tests": []}</msg>
-<status status="PASS" starttime="20221019 17:42:26.946" endtime="20221019 17:42:26.946"/>
+<msg timestamp="20221019 17:50:26.195" level="INFO">${json_xray_test} = {"tests": []}</msg>
+<status status="PASS" starttime="20221019 17:50:26.195" endtime="20221019 17:50:26.195"/>
 </kw>
 <kw name="Create File" library="OperatingSystem">
 <arg>./output/xray/xray_test.json</arg>
 <arg>${json_xray_test}</arg>
 <doc>Creates a file with the given content and encoding.</doc>
-<msg timestamp="20221019 17:42:26.946" level="INFO" html="true">Created file '&lt;a href="file:///Users/israel.garate/Documents/poc_fwrk/output/xray/xray_test.json"&gt;/Users/israel.garate/Documents/poc_fwrk/output/xray/xray_test.json&lt;/a&gt;'.</msg>
-<status status="PASS" starttime="20221019 17:42:26.946" endtime="20221019 17:42:26.946"/>
+<msg timestamp="20221019 17:50:26.195" level="INFO" html="true">Created file '&lt;a href="file:///Users/israel.garate/Documents/poc_fwrk/output/xray/xray_test.json"&gt;/Users/israel.garate/Documents/poc_fwrk/output/xray/xray_test.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20221019 17:50:26.195" endtime="20221019 17:50:26.195"/>
 </kw>
-<status status="PASS" starttime="20221019 17:42:26.945" endtime="20221019 17:42:26.946"/>
+<status status="PASS" starttime="20221019 17:50:26.194" endtime="20221019 17:50:26.195"/>
 </kw>
 <kw name="Pasa los certificados" library="keywords">
 <kw name="Warning" library="travelfree">
-<status status="PASS" starttime="20221019 17:42:26.947" endtime="20221019 17:42:26.947"/>
+<status status="PASS" starttime="20221019 17:50:26.195" endtime="20221019 17:50:26.195"/>
 </kw>
 <kw name="Verify" library="travelfree">
 <arg>${REMOTE_URL}</arg>
-<status status="PASS" starttime="20221019 17:42:26.947" endtime="20221019 17:42:27.426"/>
+<status status="PASS" starttime="20221019 17:50:26.195" endtime="20221019 17:50:26.669"/>
 </kw>
-<status status="PASS" starttime="20221019 17:42:26.947" endtime="20221019 17:42:27.426"/>
+<status status="PASS" starttime="20221019 17:50:26.195" endtime="20221019 17:50:26.670"/>
 </kw>
 <kw name="Abro app" library="keywords">
 <kw name="Set Library Search Order" library="BuiltIn">
 <arg>AppiumLibrary</arg>
 <arg>SikuliLibrary</arg>
 <doc>Sets the resolution order to use when a name matches multiple keywords.</doc>
-<status status="PASS" starttime="20221019 17:42:27.427" endtime="20221019 17:42:27.428"/>
+<status status="PASS" starttime="20221019 17:50:26.670" endtime="20221019 17:50:26.671"/>
 </kw>
 <kw name="Set Variable If" library="BuiltIn">
 <var>${env}</var>
@@ -242,22 +242,22 @@
 <arg>'${entorno}' == 'PROD'</arg>
 <arg>https://areaprivada.orange.es/soycliente/</arg>
 <doc>Sets variable based on the given condition.</doc>
-<status status="PASS" starttime="20221019 17:42:27.431" endtime="20221019 17:42:27.432"/>
+<status status="PASS" starttime="20221019 17:50:26.673" endtime="20221019 17:50:26.673"/>
 </kw>
-<status status="PASS" starttime="20221019 17:42:27.430" endtime="20221019 17:42:27.432"/>
+<status status="PASS" starttime="20221019 17:50:26.673" endtime="20221019 17:50:26.673"/>
 </kw>
-<status status="PASS" starttime="20221019 17:42:27.430" endtime="20221019 17:42:27.432"/>
+<status status="PASS" starttime="20221019 17:50:26.672" endtime="20221019 17:50:26.673"/>
 </kw>
-<status status="PASS" starttime="20221019 17:42:27.429" endtime="20221019 17:42:27.432"/>
+<status status="PASS" starttime="20221019 17:50:26.672" endtime="20221019 17:50:26.673"/>
 </kw>
-<msg timestamp="20221019 17:42:27.432" level="INFO">${env} = https://areaprivada.orange.es/soycliente/</msg>
-<status status="PASS" starttime="20221019 17:42:27.428" endtime="20221019 17:42:27.432"/>
+<msg timestamp="20221019 17:50:26.674" level="INFO">${env} = https://areaprivada.orange.es/soycliente/</msg>
+<status status="PASS" starttime="20221019 17:50:26.671" endtime="20221019 17:50:26.674"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${env}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221019 17:42:27.433" level="INFO">${env} = https://areaprivada.orange.es/soycliente/</msg>
-<status status="PASS" starttime="20221019 17:42:27.432" endtime="20221019 17:42:27.433"/>
+<msg timestamp="20221019 17:50:26.674" level="INFO">${env} = https://areaprivada.orange.es/soycliente/</msg>
+<status status="PASS" starttime="20221019 17:50:26.674" endtime="20221019 17:50:26.674"/>
 </kw>
 <kw name="Open Application" library="AppiumLibrary">
 <arg>${REMOTE_URL}</arg>
@@ -279,27 +279,27 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 | *Option*            | *Man.* | *Description*     |
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |</doc>
-<status status="PASS" starttime="20221019 17:42:27.433" endtime="20221019 17:42:56.752"/>
+<status status="PASS" starttime="20221019 17:50:26.674" endtime="20221019 17:50:58.896"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221019 17:42:58.754" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20221019 17:42:56.753" endtime="20221019 17:42:58.755"/>
+<msg timestamp="20221019 17:51:00.898" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221019 17:50:58.897" endtime="20221019 17:51:00.898"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${entorno}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:58.756" endtime="20221019 17:42:58.757"/>
+<status status="PASS" starttime="20221019 17:51:00.899" endtime="20221019 17:51:00.901"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${env}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:58.757" endtime="20221019 17:42:58.757"/>
+<status status="PASS" starttime="20221019 17:51:00.901" endtime="20221019 17:51:00.902"/>
 </kw>
-<status status="PASS" starttime="20221019 17:42:27.427" endtime="20221019 17:42:58.757"/>
+<status status="PASS" starttime="20221019 17:50:26.670" endtime="20221019 17:51:00.902"/>
 </kw>
-<status status="PASS" starttime="20221019 17:42:26.938" endtime="20221019 17:42:58.759"/>
+<status status="PASS" starttime="20221019 17:50:26.187" endtime="20221019 17:51:00.907"/>
 </test>
 <test id="s1-t2" name="ARCLMU-9999">
 <kw name="Fecha y hora del inicio del test" library="keywords">
@@ -307,15 +307,15 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <var>${inicial_test}</var>
 <arg>result_format=timestamp</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<msg timestamp="20221019 17:42:58.761" level="INFO">${inicial_test} = 2022-10-19 17:42:58.761</msg>
-<status status="PASS" starttime="20221019 17:42:58.761" endtime="20221019 17:42:58.761"/>
+<msg timestamp="20221019 17:51:00.922" level="INFO">${inicial_test} = 2022-10-19 17:51:00.921</msg>
+<status status="PASS" starttime="20221019 17:51:00.909" endtime="20221019 17:51:00.922"/>
 </kw>
 <kw name="Get Current Date" library="DateTime">
 <var>${inicial_test}</var>
 <arg>result_format=%Y-%m-%dT%H:%M:%S.%f</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<msg timestamp="20221019 17:42:58.762" level="INFO">${inicial_test} = 2022-10-19T17:42:58.761632</msg>
-<status status="PASS" starttime="20221019 17:42:58.761" endtime="20221019 17:42:58.762"/>
+<msg timestamp="20221019 17:51:00.923" level="INFO">${inicial_test} = 2022-10-19T17:51:00.923009</msg>
+<status status="PASS" starttime="20221019 17:51:00.922" endtime="20221019 17:51:00.923"/>
 </kw>
 <kw name="Get Substring" library="String">
 <var>${inicial_test}</var>
@@ -323,228 +323,226 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>0</arg>
 <arg>23</arg>
 <doc>Returns a substring from ``start`` index to ``end`` index.</doc>
-<msg timestamp="20221019 17:42:58.762" level="INFO">${inicial_test} = 2022-10-19T17:42:58.761</msg>
-<status status="PASS" starttime="20221019 17:42:58.762" endtime="20221019 17:42:58.762"/>
+<msg timestamp="20221019 17:51:00.924" level="INFO">${inicial_test} = 2022-10-19T17:51:00.923</msg>
+<status status="PASS" starttime="20221019 17:51:00.923" endtime="20221019 17:51:00.924"/>
 </kw>
 <kw name="Set Suite Variable" library="BuiltIn">
 <arg>${inicial_test}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<msg timestamp="20221019 17:42:58.763" level="INFO">${inicial_test} = 2022-10-19T17:42:58.761</msg>
-<status status="PASS" starttime="20221019 17:42:58.762" endtime="20221019 17:42:58.763"/>
+<msg timestamp="20221019 17:51:00.924" level="INFO">${inicial_test} = 2022-10-19T17:51:00.923</msg>
+<status status="PASS" starttime="20221019 17:51:00.924" endtime="20221019 17:51:00.924"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>*</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:58.763" endtime="20221019 17:42:58.763"/>
+<status status="PASS" starttime="20221019 17:51:00.924" endtime="20221019 17:51:00.925"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>********************************************************************************************************</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:58.763" endtime="20221019 17:42:58.763"/>
+<status status="PASS" starttime="20221019 17:51:00.925" endtime="20221019 17:51:00.925"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>********************************************************************************************************</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:58.763" endtime="20221019 17:42:58.764"/>
+<status status="PASS" starttime="20221019 17:51:00.925" endtime="20221019 17:51:00.925"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>********************************************************************************************************</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:58.764" endtime="20221019 17:42:58.764"/>
+<status status="PASS" starttime="20221019 17:51:00.925" endtime="20221019 17:51:00.926"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>TEST EN EJECUCIÓN:</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:58.764" endtime="20221019 17:42:58.764"/>
+<status status="PASS" starttime="20221019 17:51:00.926" endtime="20221019 17:51:00.926"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${TEST_NAME}-${TEST_TAGS}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:58.765" endtime="20221019 17:42:58.765"/>
+<status status="PASS" starttime="20221019 17:51:00.926" endtime="20221019 17:51:00.926"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>*</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:58.765" endtime="20221019 17:42:58.765"/>
+<status status="PASS" starttime="20221019 17:51:00.926" endtime="20221019 17:51:00.927"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Se trata de un perfil ${perfil} contra el entorno ${entorno} y sobre un dispositivo real</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:58.765" endtime="20221019 17:42:58.766"/>
+<status status="PASS" starttime="20221019 17:51:00.927" endtime="20221019 17:51:00.927"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>*</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:58.766" endtime="20221019 17:42:58.766"/>
+<status status="PASS" starttime="20221019 17:51:00.927" endtime="20221019 17:51:00.927"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>********************************************************************************************************</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:58.766" endtime="20221019 17:42:58.766"/>
+<status status="PASS" starttime="20221019 17:51:00.927" endtime="20221019 17:51:00.928"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>********************************************************************************************************</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:58.766" endtime="20221019 17:42:58.766"/>
+<status status="PASS" starttime="20221019 17:51:00.928" endtime="20221019 17:51:00.928"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>********************************************************************************************************</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:42:58.766" endtime="20221019 17:42:58.767"/>
+<status status="PASS" starttime="20221019 17:51:00.928" endtime="20221019 17:51:00.928"/>
 </kw>
-<status status="PASS" starttime="20221019 17:42:58.761" endtime="20221019 17:42:58.767"/>
+<status status="PASS" starttime="20221019 17:51:00.908" endtime="20221019 17:51:00.929"/>
 </kw>
 <kw name="Probar login KO contraseña" library="keywords">
 <kw name="Sleep" library="BuiltIn">
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221019 17:43:03.767" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20221019 17:42:58.767" endtime="20221019 17:43:03.767"/>
+<msg timestamp="20221019 17:51:05.931" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221019 17:51:00.929" endtime="20221019 17:51:05.932"/>
 </kw>
 <kw name="Input Text" library="AppiumLibrary">
 <arg>${input_user}</arg>
 <arg>655758100</arg>
 <doc>Types the given `text` into text field identified by `locator`.</doc>
-<msg timestamp="20221019 17:43:03.783" level="INFO">Typing text '655758100' into text field 'xpath=//android.view.View[@resource-id="ocsLoginPassword_input_userNameField"]/descendant::android.widget.EditText'</msg>
-<status status="PASS" starttime="20221019 17:43:03.768" endtime="20221019 17:43:04.360"/>
+<msg timestamp="20221019 17:51:05.954" level="INFO">Typing text '655758100' into text field 'xpath=//android.view.View[@resource-id="ocsLoginPassword_input_userNameField"]/descendant::android.widget.EditText'</msg>
+<status status="PASS" starttime="20221019 17:51:05.934" endtime="20221019 17:51:06.710"/>
 </kw>
 <kw name="Input Password" library="AppiumLibrary">
 <arg>${input_password}</arg>
 <arg>passerror</arg>
 <doc>Types the given password into text field identified by `locator`.</doc>
-<msg timestamp="20221019 17:43:04.380" level="INFO">Typing password into text field 'xpath=//android.view.View[@resource-id="ocsLoginPassword_input_passwordField"]/descendant::android.widget.EditText'</msg>
-<status status="PASS" starttime="20221019 17:43:04.361" endtime="20221019 17:43:05.248"/>
+<msg timestamp="20221019 17:51:06.730" level="INFO">Typing password into text field 'xpath=//android.view.View[@resource-id="ocsLoginPassword_input_passwordField"]/descendant::android.widget.EditText'</msg>
+<status status="PASS" starttime="20221019 17:51:06.710" endtime="20221019 17:51:07.688"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>${boton_ojito}</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20221019 17:43:05.268" level="INFO">Clicking element '//*[@resource-id='ocsLoginPassword_btn_togglePasswordFieldVisibility']'.</msg>
-<status status="PASS" starttime="20221019 17:43:05.249" endtime="20221019 17:43:06.461"/>
+<msg timestamp="20221019 17:51:07.710" level="INFO">Clicking element '//*[@resource-id='ocsLoginPassword_btn_togglePasswordFieldVisibility']'.</msg>
+<status status="PASS" starttime="20221019 17:51:07.688" endtime="20221019 17:51:08.903"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>${boton_entrar}</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20221019 17:43:06.480" level="INFO">Clicking element '//*[@resource-id='ocsLoginPassword_btn_submitLoginForm']'.</msg>
-<status status="PASS" starttime="20221019 17:43:06.462" endtime="20221019 17:43:07.426"/>
+<msg timestamp="20221019 17:51:08.924" level="INFO">Clicking element '//*[@resource-id='ocsLoginPassword_btn_submitLoginForm']'.</msg>
+<status status="PASS" starttime="20221019 17:51:08.903" endtime="20221019 17:51:09.784"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221019 17:43:12.428" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20221019 17:43:07.426" endtime="20221019 17:43:12.431"/>
+<msg timestamp="20221019 17:51:14.788" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221019 17:51:09.785" endtime="20221019 17:51:14.788"/>
 </kw>
 <kw name="Get Contexts" library="AppiumLibrary">
 <var>@{all_contexts}</var>
 <doc>Get available contexts.</doc>
-<msg timestamp="20221019 17:43:13.022" level="INFO">['NATIVE_APP', 'WEBVIEW_com.orange.miorange.dev']</msg>
-<msg timestamp="20221019 17:43:13.023" level="INFO">@{all_contexts} = [ NATIVE_APP | WEBVIEW_com.orange.miorange.dev ]</msg>
-<status status="PASS" starttime="20221019 17:43:12.433" endtime="20221019 17:43:13.023"/>
+<msg timestamp="20221019 17:51:15.256" level="INFO">['NATIVE_APP', 'WEBVIEW_com.orange.miorange.dev']</msg>
+<msg timestamp="20221019 17:51:15.256" level="INFO">@{all_contexts} = [ NATIVE_APP | WEBVIEW_com.orange.miorange.dev ]</msg>
+<status status="PASS" starttime="20221019 17:51:14.788" endtime="20221019 17:51:15.256"/>
 </kw>
 <kw name="Switch To Context" library="AppiumLibrary">
 <arg>WEBVIEW_com.orange.miorange.dev</arg>
 <doc>Switch to a new context</doc>
-<status status="PASS" starttime="20221019 17:43:13.024" endtime="20221019 17:43:13.643"/>
+<status status="PASS" starttime="20221019 17:51:15.257" endtime="20221019 17:51:15.982"/>
 </kw>
 <kw name="Wait Until Page Contains" library="AppiumLibrary">
 <arg>Usuario/contraseña incorrecto.</arg>
 <arg>timeout= 20</arg>
 <doc>Waits until `text` appears on current page.</doc>
-<status status="PASS" starttime="20221019 17:43:13.644" endtime="20221019 17:43:14.297"/>
+<status status="PASS" starttime="20221019 17:51:15.983" endtime="20221019 17:51:16.625"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>${boton_cerrarModal}</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20221019 17:43:14.323" level="INFO">Clicking element 'xpath=(//button[@title="Cerrar ventana modal"])[2]'.</msg>
-<status status="PASS" starttime="20221019 17:43:14.298" endtime="20221019 17:43:14.833"/>
+<msg timestamp="20221019 17:51:16.645" level="INFO">Clicking element 'xpath=(//button[@title="Cerrar ventana modal"])[2]'.</msg>
+<status status="PASS" starttime="20221019 17:51:16.626" endtime="20221019 17:51:17.212"/>
 </kw>
 <kw name="Switch To Context" library="AppiumLibrary">
 <arg>NATIVE_APP</arg>
 <doc>Switch to a new context</doc>
-<status status="PASS" starttime="20221019 17:43:14.833" endtime="20221019 17:43:15.132"/>
+<status status="PASS" starttime="20221019 17:51:17.213" endtime="20221019 17:51:17.505"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221019 17:43:20.135" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20221019 17:43:15.133" endtime="20221019 17:43:20.137"/>
+<msg timestamp="20221019 17:51:22.507" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221019 17:51:17.505" endtime="20221019 17:51:22.507"/>
 </kw>
-<status status="PASS" starttime="20221019 17:42:58.767" endtime="20221019 17:43:20.139"/>
+<status status="PASS" starttime="20221019 17:51:00.929" endtime="20221019 17:51:22.508"/>
 </kw>
 <kw name="Logado OK" library="keywords">
 <kw name="Sleep" library="BuiltIn">
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221019 17:43:25.152" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20221019 17:43:20.149" endtime="20221019 17:43:25.152"/>
+<msg timestamp="20221019 17:51:27.513" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221019 17:51:22.510" endtime="20221019 17:51:27.515"/>
 </kw>
 <kw name="Input Text" library="AppiumLibrary">
 <arg>${input_user}</arg>
 <arg>${CREDENTIALS_${perfil}_${entorno}}[MSISDN]</arg>
 <doc>Types the given `text` into text field identified by `locator`.</doc>
-<msg timestamp="20221019 17:43:25.176" level="INFO">Typing text '683426066' into text field 'xpath=//android.view.View[@resource-id="ocsLoginPassword_input_userNameField"]/descendant::android.widget.EditText'</msg>
-<status status="PASS" starttime="20221019 17:43:25.153" endtime="20221019 17:43:25.870"/>
+<msg timestamp="20221019 17:51:27.542" level="INFO">Typing text '683426066' into text field 'xpath=//android.view.View[@resource-id="ocsLoginPassword_input_userNameField"]/descendant::android.widget.EditText'</msg>
+<status status="PASS" starttime="20221019 17:51:27.516" endtime="20221019 17:51:28.050"/>
 </kw>
 <kw name="Input Password" library="AppiumLibrary">
 <arg>${input_password}</arg>
 <arg>${CREDENTIALS_${perfil}_${entorno}}[PASS]</arg>
 <doc>Types the given password into text field identified by `locator`.</doc>
-<msg timestamp="20221019 17:43:25.884" level="INFO">Typing password into text field 'xpath=//android.view.View[@resource-id="ocsLoginPassword_input_passwordField"]/descendant::android.widget.EditText'</msg>
-<status status="PASS" starttime="20221019 17:43:25.870" endtime="20221019 17:43:27.590"/>
+<msg timestamp="20221019 17:51:28.074" level="INFO">Typing password into text field 'xpath=//android.view.View[@resource-id="ocsLoginPassword_input_passwordField"]/descendant::android.widget.EditText'</msg>
+<status status="PASS" starttime="20221019 17:51:28.051" endtime="20221019 17:51:28.923"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221019 17:43:29.594" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20221019 17:43:27.591" endtime="20221019 17:43:29.594"/>
+<msg timestamp="20221019 17:51:30.927" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221019 17:51:28.924" endtime="20221019 17:51:30.927"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>${boton_entrar}</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20221019 17:43:29.620" level="INFO">Clicking element '//*[@resource-id='ocsLoginPassword_btn_submitLoginForm']'.</msg>
-<status status="PASS" starttime="20221019 17:43:29.595" endtime="20221019 17:43:30.279"/>
+<msg timestamp="20221019 17:51:30.950" level="INFO">Clicking element '//*[@resource-id='ocsLoginPassword_btn_submitLoginForm']'.</msg>
+<status status="PASS" starttime="20221019 17:51:30.928" endtime="20221019 17:51:31.530"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>10</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221019 17:43:40.282" level="INFO">Slept 10 seconds</msg>
-<status status="PASS" starttime="20221019 17:43:30.279" endtime="20221019 17:43:40.283"/>
+<msg timestamp="20221019 17:51:41.533" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20221019 17:51:31.530" endtime="20221019 17:51:41.534"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>${denegar_contactos}</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20221019 17:43:40.303" level="INFO">Clicking element 'xpath=//android.widget.TextView[@text="Gasto extra"]'.</msg>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20221019 17:43:41.633" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20221019 17:43:40.590" endtime="20221019 17:43:41.634"/>
-</kw>
-<msg timestamp="20221019 17:43:41.638" level="FAIL">ValueError: Element locator 'xpath=//android.widget.TextView[@text="Gasto extra"]' did not match any elements.</msg>
-<status status="FAIL" starttime="20221019 17:43:40.284" endtime="20221019 17:43:41.638"/>
+<msg timestamp="20221019 17:51:41.558" level="INFO">Clicking element 'xpath=//android.widget.TextView[@text="Gasto extra"]'.</msg>
+<status status="PASS" starttime="20221019 17:51:41.535" endtime="20221019 17:51:42.376"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20221019 17:43:41.639" endtime="20221019 17:43:41.639"/>
+<msg timestamp="20221019 17:51:47.378" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221019 17:51:42.376" endtime="20221019 17:51:47.378"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>${consumo}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="NOT RUN" starttime="20221019 17:43:41.639" endtime="20221019 17:43:41.639"/>
+<msg timestamp="20221019 17:51:47.401" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[1]/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.widget.TextView'.</msg>
+<status status="PASS" starttime="20221019 17:51:47.379" endtime="20221019 17:51:48.172"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>10</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20221019 17:43:41.639" endtime="20221019 17:43:41.639"/>
+<msg timestamp="20221019 17:51:58.175" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20221019 17:51:48.173" endtime="20221019 17:51:58.178"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>${consumo}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="NOT RUN" starttime="20221019 17:43:41.640" endtime="20221019 17:43:41.640"/>
+<msg timestamp="20221019 17:51:58.206" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[1]/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.widget.TextView'.</msg>
+<status status="PASS" starttime="20221019 17:51:58.180" endtime="20221019 17:51:59.222"/>
 </kw>
-<status status="FAIL" starttime="20221019 17:43:20.140" endtime="20221019 17:43:41.640"/>
+<status status="PASS" starttime="20221019 17:51:22.508" endtime="20221019 17:51:59.223"/>
 </kw>
 <tag>TEST-000-ARCLMU-9999-Prueba de logado</tag>
-<status status="FAIL" starttime="20221019 17:42:58.760" endtime="20221019 17:43:41.641">ValueError: Element locator 'xpath=//android.widget.TextView[@text="Gasto extra"]' did not match any elements.</status>
+<status status="PASS" starttime="20221019 17:51:00.908" endtime="20221019 17:51:59.224"/>
 </test>
 <test id="s1-t3" name="POSTCONDICION">
 <kw name="Fecha y hora del inicio del test" library="keywords">
@@ -552,15 +550,15 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <var>${inicial_test}</var>
 <arg>result_format=timestamp</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<msg timestamp="20221019 17:43:41.643" level="INFO">${inicial_test} = 2022-10-19 17:43:41.643</msg>
-<status status="PASS" starttime="20221019 17:43:41.643" endtime="20221019 17:43:41.643"/>
+<msg timestamp="20221019 17:51:59.229" level="INFO">${inicial_test} = 2022-10-19 17:51:59.229</msg>
+<status status="PASS" starttime="20221019 17:51:59.228" endtime="20221019 17:51:59.229"/>
 </kw>
 <kw name="Get Current Date" library="DateTime">
 <var>${inicial_test}</var>
 <arg>result_format=%Y-%m-%dT%H:%M:%S.%f</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<msg timestamp="20221019 17:43:41.644" level="INFO">${inicial_test} = 2022-10-19T17:43:41.643488</msg>
-<status status="PASS" starttime="20221019 17:43:41.643" endtime="20221019 17:43:41.644"/>
+<msg timestamp="20221019 17:51:59.230" level="INFO">${inicial_test} = 2022-10-19T17:51:59.229751</msg>
+<status status="PASS" starttime="20221019 17:51:59.229" endtime="20221019 17:51:59.230"/>
 </kw>
 <kw name="Get Substring" library="String">
 <var>${inicial_test}</var>
@@ -568,90 +566,90 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>0</arg>
 <arg>23</arg>
 <doc>Returns a substring from ``start`` index to ``end`` index.</doc>
-<msg timestamp="20221019 17:43:41.644" level="INFO">${inicial_test} = 2022-10-19T17:43:41.643</msg>
-<status status="PASS" starttime="20221019 17:43:41.644" endtime="20221019 17:43:41.644"/>
+<msg timestamp="20221019 17:51:59.231" level="INFO">${inicial_test} = 2022-10-19T17:51:59.229</msg>
+<status status="PASS" starttime="20221019 17:51:59.230" endtime="20221019 17:51:59.231"/>
 </kw>
 <kw name="Set Suite Variable" library="BuiltIn">
 <arg>${inicial_test}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<msg timestamp="20221019 17:43:41.645" level="INFO">${inicial_test} = 2022-10-19T17:43:41.643</msg>
-<status status="PASS" starttime="20221019 17:43:41.644" endtime="20221019 17:43:41.645"/>
+<msg timestamp="20221019 17:51:59.232" level="INFO">${inicial_test} = 2022-10-19T17:51:59.229</msg>
+<status status="PASS" starttime="20221019 17:51:59.231" endtime="20221019 17:51:59.232"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>*</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:43:41.645" endtime="20221019 17:43:41.645"/>
+<status status="PASS" starttime="20221019 17:51:59.232" endtime="20221019 17:51:59.236"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>********************************************************************************************************</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:43:41.645" endtime="20221019 17:43:41.645"/>
+<status status="PASS" starttime="20221019 17:51:59.236" endtime="20221019 17:51:59.237"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>********************************************************************************************************</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:43:41.645" endtime="20221019 17:43:41.645"/>
+<status status="PASS" starttime="20221019 17:51:59.238" endtime="20221019 17:51:59.239"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>********************************************************************************************************</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:43:41.646" endtime="20221019 17:43:41.646"/>
+<status status="PASS" starttime="20221019 17:51:59.239" endtime="20221019 17:51:59.240"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>TEST EN EJECUCIÓN:</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:43:41.646" endtime="20221019 17:43:41.647"/>
+<status status="PASS" starttime="20221019 17:51:59.240" endtime="20221019 17:51:59.240"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${TEST_NAME}-${TEST_TAGS}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:43:41.647" endtime="20221019 17:43:41.647"/>
+<status status="PASS" starttime="20221019 17:51:59.240" endtime="20221019 17:51:59.241"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>*</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:43:41.647" endtime="20221019 17:43:41.647"/>
+<status status="PASS" starttime="20221019 17:51:59.241" endtime="20221019 17:51:59.241"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Se trata de un perfil ${perfil} contra el entorno ${entorno} y sobre un dispositivo real</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:43:41.647" endtime="20221019 17:43:41.648"/>
+<status status="PASS" starttime="20221019 17:51:59.241" endtime="20221019 17:51:59.242"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>*</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:43:41.648" endtime="20221019 17:43:41.648"/>
+<status status="PASS" starttime="20221019 17:51:59.242" endtime="20221019 17:51:59.242"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>********************************************************************************************************</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:43:41.648" endtime="20221019 17:43:41.648"/>
+<status status="PASS" starttime="20221019 17:51:59.242" endtime="20221019 17:51:59.242"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>********************************************************************************************************</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:43:41.648" endtime="20221019 17:43:41.648"/>
+<status status="PASS" starttime="20221019 17:51:59.242" endtime="20221019 17:51:59.242"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>********************************************************************************************************</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 17:43:41.648" endtime="20221019 17:43:41.649"/>
+<status status="PASS" starttime="20221019 17:51:59.243" endtime="20221019 17:51:59.243"/>
 </kw>
-<status status="PASS" starttime="20221019 17:43:41.642" endtime="20221019 17:43:41.649"/>
+<status status="PASS" starttime="20221019 17:51:59.227" endtime="20221019 17:51:59.243"/>
 </kw>
-<status status="PASS" starttime="20221019 17:43:41.642" endtime="20221019 17:43:41.649"/>
+<status status="PASS" starttime="20221019 17:51:59.226" endtime="20221019 17:51:59.243"/>
 </test>
-<status status="FAIL" starttime="20221019 17:42:26.061" endtime="20221019 17:43:41.650"/>
+<status status="PASS" starttime="20221019 17:50:25.212" endtime="20221019 17:51:59.245"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="1" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">TEST-000-ARCLMU-9999-Prueba de logado</stat>
+<stat pass="1" fail="0" skip="0">TEST-000-ARCLMU-9999-Prueba de logado</stat>
 </tag>
 <suite>
-<stat pass="2" fail="1" skip="0" id="s1" name="ARCLMU-3181">ARCLMU-3181</stat>
+<stat pass="3" fail="0" skip="0" id="s1" name="ARCLMU-3181">ARCLMU-3181</stat>
 </suite>
 </statistics>
 <errors>
