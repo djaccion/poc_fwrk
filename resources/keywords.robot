@@ -16,8 +16,8 @@ Resource    ..//resources//inventario_urls.robot
 Resource    ..//resources//inventario_valida.robot
 
 *** Variables ***
-${USERNAME}     israelgarate_AfvMUY     #browserstack
-${ACCESS_KEY}   wMUGsFAb1ewu2KiewPsf    #browserstack
+${USERNAME}     israelgarate_BpUTaH     #browserstack
+${ACCESS_KEY}   fpwBTkcTHhwqczrEb2zz    #browserstack
 #${USERNAME}     israelgarate     #saucelabs
 #${ACCESS_KEY}   45608504-990d-4f4d-8902-f8911cb92a1e    #saucelabs
 ${PLATFORM_NAME}        Android             #Android
